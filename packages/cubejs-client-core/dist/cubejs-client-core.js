@@ -937,7 +937,7 @@ function () {
   return HttpTransport;
 }();
 
-var API_URL = "https://statsbot.co/cubejs-api/v1";
+var API_URL = "http://localhost:6020/cubejs-api/v1";
 var mutexCounter = 0;
 var MUTEX_ERROR = 'Mutex has been changed';
 

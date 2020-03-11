@@ -12,6 +12,7 @@ const hive = require('./HiveQuery');
 const oracle = require('./OracleQuery');
 const sqlite = require('./SqliteQuery');
 const odelasticsearch = require('./OpenDistroElasticSearchQuery');
+const firebird = require('./FirebirdQuery');
 
 const ADAPTERS = {
   postgres,
@@ -30,6 +31,7 @@ const ADAPTERS = {
   oracle,
   sqlite,
   odelasticsearch,
+  firebird,
 };
 exports.query = (compilers, dbType, queryOptions) => {
   if (!ADAPTERS[dbType]) {

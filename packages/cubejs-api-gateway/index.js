@@ -64,7 +64,6 @@ const transformValue = (value, type) => {
   return value && value.value ? value.value : value; // TODO move to sql adapter
 };
 
-
 const transformData = (aliasToMemberNameMap, annotation, data, query) => (data.map(r => R.pipe(
   R.toPairs,
   R.map(p => {

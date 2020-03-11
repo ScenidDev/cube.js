@@ -6,7 +6,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "example": "http-server",
-    "watch-local": "CUBEJS_API_URL=http://localhost:6020/cubejs-api/v1 rollup -c -w"
+    "watch-local": "cross-env CUBEJS_API_URL=http://localhost:6020/cubejs-api/v1 rollup -c -w"
   },
   "author": "Statsbot, Inc.",
   "dependencies": {
@@ -29,6 +29,7 @@
     "@cubejs-client/core": "^0.17.10",
     "babel-runtime": "^6.26.0",
     "babelrc-rollup": "^3.0.0",
+    "cross-env": "^7.0.2",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
