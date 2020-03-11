@@ -60,7 +60,11 @@ class FirebirdQuery extends BaseQuery {
   }
 
   inDbTimeZone(date) {
-    return this.inIntegrationTimeZone(date).clone().utc().format(moment.HTML5_FMT.DATETIME_LOCAL_MS);
+    return this.inIntegrationTimeZone(date).clone().utc().format(moment.HTML5_FMT.DATETIME_LOCAL_MS).replace('T', ' ');
+  }
+
+  inIntegrationTimeZone(date) {
+    return moment.tz(date, this.timezone);
   }
 
   dateTimeCast(value) {
