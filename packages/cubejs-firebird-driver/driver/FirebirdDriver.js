@@ -37,10 +37,6 @@ class FirebirdDriver extends BaseDriver {
 
     return new Promise((resolve, reject) => {
       conn.query(query, values, (err, result) => {
-        console.log('THIS', query)
-        console.log(result)
-        console.log(err)
-        console.log('-----------------------------')
         if (err) reject(err);
         resolve(result);
       })
@@ -49,10 +45,7 @@ class FirebirdDriver extends BaseDriver {
 
   async query(query, values) {
     // await this.runQuery(`SET TIME ZONE '${this.config.storeTimezone || '+00:00'}'`);
-    const res = await this.runQuery(query, values);
-    console.log('res', res);
-
-    return res
+    return this.runQuery(query, values);
   }
 
   async release() {

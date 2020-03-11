@@ -36,7 +36,7 @@ class FirebirdQuery extends BaseQuery {
   }
 
   escapeColumnName(name) {
-    return `${name}`;
+    return `"${name}"`;
   }
 }
 
