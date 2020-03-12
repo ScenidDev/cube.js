@@ -12,7 +12,7 @@ class FirebirdDriver extends BaseDriver {
       password: process.env.CUBEJS_DB_PASS,
       ...config
     };
-    this.pool = Firebird.pool(80, this.config);
+    this.pool = Firebird.pool(8, this.config);
   }
 
   async testConnection() {
@@ -38,6 +38,7 @@ class FirebirdDriver extends BaseDriver {
     return new Promise((resolve, reject) => {
       conn.query(query, values, (err, result) => {
         if (err) reject(err);
+        conn.detach();
         resolve(result);
       })
     })
